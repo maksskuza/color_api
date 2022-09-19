@@ -2,9 +2,17 @@ const express = require('express')
 const mongoose = require('mongoose')
 require('dotenv').config()
 const colorRoute = require('./routes/color')
+const cors = require('cors')
 
 const app = express()
 const PORT = process.env.PORT || 4000
+
+// cors
+app.use(
+  cors({
+    origin: "*"
+  })
+)
 
 // middlewares
 app.use(express.json())
